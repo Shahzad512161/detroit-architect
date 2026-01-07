@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Detroit Architectural Group | DAG</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#f97316',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .text-accent { color: #f97316; } /* Tailwind orange-500 */
+        .text-accent { color: #f97316; }
         .bg-accent { background-color: #f97316; }
         .border-accent { border-color: #f97316; }
     </style>
@@ -29,9 +42,8 @@
 </script>
 <script type="module" src="./index.tsx"></script>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
     <div id="root">
-        <!-- Fallback loading state shown before React mounts -->
         <div class="flex items-center justify-center min-h-screen">
             <div class="text-gray-400 animate-pulse font-medium tracking-widest uppercase text-sm">Loading DAG...</div>
         </div>
